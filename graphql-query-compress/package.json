@@ -1,0 +1,43 @@
+{
+    "name":        "graphql-query-compress",
+    "version":     "1.1.0",
+    "description": "Compress a GraphQL Query String",
+    "keywords":    [ "graphql", "query", "compress" ],
+    "cdn":         "lib/graphql-query-compress.js",
+    "main":        "lib/graphql-query-compress.cjs.js",
+    "unpkg":       "lib/graphql-query-compress.js",
+    "module":      "lib/graphql-query-compress.es.js",
+    "jsdelivr":    "lib/graphql-query-compress.js",
+    "umd:main":    "lib/graphql-query-compress.js",
+    "license":     "MIT",
+    "repository": {
+        "type": "git",
+        "url":  "https://github.com/rse/graphql-query-compress.git"
+    },
+    "author": {
+        "name":  "Ralf S. Engelschall",
+        "email": "rse@engelschall.com",
+        "url":   "http://engelschall.com"
+    },
+    "homepage": "https://github.com/rse/graphql-query-compress",
+    "bugs":     "https://github.com/rse/graphql-query-compress/issues",
+    "dependencies": {
+        "tokenizr":                        "1.3.10"
+    },
+    "devDependencies": {
+        "babel-eslint":                    "9.0.0",
+        "bili":                            "^3.4.2",
+        "eslint":                          "5.5.0",
+        "eslint-config-standard":          "12.0.0",
+        "eslint-plugin-import":            "2.14.0",
+        "eslint-plugin-node":              "7.0.1",
+        "eslint-plugin-promise":           "4.0.0",
+        "eslint-plugin-standard":          "4.0.0"
+    },
+    "scripts": {
+        "lint":           "eslint src/*.js -c eslint.yaml",
+        "bundle":         "bili src/graphql-query-compress.js --format es,cjs,umd -o lib",
+        "prepublishOnly": "npm run build",
+        "build":          "npm run lint && npm run bundle"
+    }
+}
